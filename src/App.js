@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
+import { Provider } from 'react-redux'
 
 import Header from './components/Header'
 import MainScreen from './components/MainScreen'
+import store from './redux/storeConfig'
 
 const MainContainer = styled.div`
   width: 1000px;
@@ -10,13 +12,14 @@ const MainContainer = styled.div`
   margin: 0 auto;
 `
 
-
 function App() {
   return (
-    <MainContainer>
-      <Header />
-      <MainScreen />
-    </MainContainer>
+    <Provider store={store}>
+      <MainContainer>
+        <Header />
+        <MainScreen />
+      </MainContainer>
+    </Provider>
   );
 }
 
