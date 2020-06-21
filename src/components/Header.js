@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import psBadge from '../assets/Badge_PS.svg'
 import asBadge from '../assets/Badge_AS.svg'
@@ -10,6 +11,10 @@ const Header = styled.header`
   align-items: center;
   height: 7%;
   padding: 0 .5rem;
+  a {
+      text-decoration: none;
+      color: black;
+  }
   .logo {
       display: flex;
       align-items: center;
@@ -36,11 +41,11 @@ const Header = styled.header`
 
 export default () => {
     return (
-        <Header>
-            <div className="logo">
+        <Header>            
+            <Link to="/" className="logo">
                 <img src="/images/ICON_APP.png" alt="ahimsa logo" />  
                 <span>Ahimsa</span>
-            </div> 
+            </Link>            
             <div className="apps">
                 <img src={psBadge} alt="Google PlayStore" />
                 <img src={asBadge} alt="Apple App Store" />

@@ -6,7 +6,6 @@
 *, *:after, *:before {
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -17,11 +16,46 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-  
+
 }
 
-/* */
+/* QUOTE MODAL CLASSES */
+.quote-modal-overlay {  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#fff; 
+}
+.quote-modal-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL TRANSITIONS */
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms linear;
+}
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}

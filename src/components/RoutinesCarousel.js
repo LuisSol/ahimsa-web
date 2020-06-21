@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
@@ -17,6 +17,7 @@ const RoutinesCarousel = styled.section`
 
 export default () => {
     const dispatch = useDispatch();
+    const current = useSelector(state => state.routineIndex);
 
     const changeRoutine = (index) => {
         dispatch(actions.changeRoutine(index))
@@ -25,6 +26,7 @@ export default () => {
     return (
         <RoutinesCarousel>            
             <Slider
+                initialSlide={current}
                 slidesToScroll={1}
                 slidesToShow={1}
                 speed={400}

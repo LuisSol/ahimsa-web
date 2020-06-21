@@ -14,4 +14,13 @@ export const routineGradients = [
     },
 ]
 
+export const pageTransition = {
+    in: {
+        opacity: 1
+    },
+    out: {
+        opacity: 0
+    }
+}
+
 

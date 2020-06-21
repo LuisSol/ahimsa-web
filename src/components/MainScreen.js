@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import RoutinesCarousel from './RoutinesCarousel';
-import { routineGradients } from '../common_styles';
+import { routineGradients, pageTransition } from '../common_styles';
 
-const MainContainer = styled.main` 
-    height: 93%;
+const MainContainer = styled.section`    
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -25,7 +27,6 @@ const MainContainer = styled.main`
         text-align: center;
     }
 `
-
 const PrimaryBtn = styled.button`
     border: 0;
     width: 10rem;
@@ -33,23 +34,40 @@ const PrimaryBtn = styled.button`
     border-radius: 10px;
     color: white;
     font-size: 1.5rem;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        opacity: .4;
+    }
 `
 
-
 export default () => {
-    const current = useSelector(state => state.routineIndex)
+    const current = useSelector(state => state.routineIndex);
+    const history = useHistory();
 
     return (
-        <MainContainer>
-            <div className="header">
-                <h1 className="main-title">Ahimsa</h1>
-                <p>Elige tu ritmo:</p>                
-            </div>            
-            <RoutinesCarousel />
-            <div>        
-                <PrimaryBtn style={routineGradients[current]}>Elegir</PrimaryBtn>
-            </div>
-        </MainContainer>       
+        <motion.main
+            initial="out" animate="in" exit="out" variants={pageTransition}            
+            style={{height: '100%'}}
+        >
+            <MainContainer>            
+                <div className="header">
+                    <h1 className="main-title">Ahimsa</h1>
+                    <p>Elige tu ritmo:</p>                
+                </div>            
+                <RoutinesCarousel />
+                <div>        
+                    <PrimaryBtn 
+                        style={routineGradients[current]}
+                        onClick={() => history.push('/start')}
+                    >
+                        Elegir
+                    </PrimaryBtn>
+                </div>            
+            </MainContainer>
+        </motion.main>       
     )
 }
 
