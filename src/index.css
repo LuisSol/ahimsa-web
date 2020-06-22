@@ -48,6 +48,32 @@ code {
   align-items: center;
 }
 
+/* COUNTDOWN MODAL CLASSES */
+.countdown-modal-content {
+  height: 200px;
+  width: 200px;
+  border: 1px solid #666;
+  border-radius: 10px;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.countdown-modal-overlay { 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,.8);
+}
+
 /* MODAL TRANSITIONS */
 .ReactModal__Overlay {
   opacity: 0;

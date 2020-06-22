@@ -11,8 +11,13 @@ export const routineGradients = [
     {
         background: 'rgb(29,38,113)',
         background: 'linear-gradient(0deg, rgba(29,38,113,1) 18%, rgba(195,55,100,1) 100%)'
-    },
+    }
 ]
+
+export const backBtnGradient = {
+    background: 'rgb(237,33,58)',
+    background: 'linear-gradient(180deg, rgba(237,33,58,1) 18%, rgba(147,41,30,1) 100%)'
+}
 
 export const pageTransition = {
     in: {

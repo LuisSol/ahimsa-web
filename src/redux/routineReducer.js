@@ -1,8 +1,9 @@
 import types from './actionTypes'
+import routines from '../routines'
 
 const defaultState = {
     routineIndex: 0,
-    routine: {}
+    routine: routines[0]
 }
 
 const routineReducer = (state = defaultState, action) => {
