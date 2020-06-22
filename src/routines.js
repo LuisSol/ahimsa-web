@@ -28,7 +28,8 @@ export default [
         },
         inhaleTime: 1000,
         holdTime: 500,
-        exhaleTime: 1000
+        exhaleTime: 1000,
+        totalTimeSec: 2.5
     },
     {        
         id: 'concen2',
@@ -39,7 +40,8 @@ export default [
         },
         inhaleTime: 2000,
         holdTime: 1000,
-        exhaleTime: 2000
+        exhaleTime: 2000,
+        totalTimeSec: 5
     },
     {        
         id: 'relx3',
@@ -50,6 +52,7 @@ export default [
         },
         inhaleTime: 4000,
         holdTime: 2000,
-        exhaleTime: 4000
+        exhaleTime: 4000,
+        totalTimeSec: 10
     },
 ]

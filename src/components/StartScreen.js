@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Modal from 'react-modal';
 
-import { pageTransition } from '../common_styles';
 import QuoteModal from './QuoteModal';
+import { pageTransition } from '../common_styles';
 import { routineGradients, backBtnGradient } from '../common_styles';
 
 const StartContainer = styled.section`
@@ -63,7 +63,7 @@ const PieChart =  styled.div`
     .pointer-container {
         position: absolute;
         width: 20px;
-        top: -25px;
+        height: 450px;
     }
     .pointer {
         height: 20px;
@@ -72,29 +72,32 @@ const PieChart =  styled.div`
         border: 1px solid #666;
         border-radius: 50%
     }
-`
-const BreathCircle = styled.div`
-    height: 320px;
-    width: 320px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    span {
-        font-family: 'Sacramento', cursive;
-        font-size: 3.5rem;
+    .breath-circle {
+        height: 320px;
+        width: 320px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        span {
+            font-family: 'Sacramento', cursive;
+            font-size: 3.5rem;
+        }
     }
 `
+
 const counterInit = 3;
 
 const StartScreen = () => {
+    const { routineIndex, routine } = useSelector(state => state);
     const [quoteVisible, setQuoteVisible] = useState(true);
     const [countdownVisible, setCountdownVisible] = useState(false);
     const [routineRunning, setRoutineRunning] = useState(false);    
-    const [counter, setCounter] = useState(counterInit);
-    const { routineIndex, routine } = useSelector(state => state);
+    const [counter, setCounter] = useState(counterInit);    
     const history = useHistory();
+    const pointerAnimation = useAnimation();
+    const breathAnimation = useAnimation();
 
     // intro modal timer
     useEffect(() => {
@@ -109,13 +112,30 @@ const StartScreen = () => {
         setTimeout(() => {
             setCounter(counter - 1);
         }, 1000);
-    }
+    }    
 
-    const startRoutine = () => {        
+    const startRoutine = useCallback(() => {        
         setTimeout(() => {
             setCounter(counterInit);
+            pointerAnimation.start({
+                rotate: 360,
+                transition: {
+                    duration: routine.totalTimeSec,
+                    loop: routine.iterations,
+                    ease: 'linear'
+                }
+            });
+            breathAnimation.start({
+                scale: [null, 1.1, 1.1, 1],
+                transition: {
+                    duration: routine.totalTimeSec,
+                    loop: routine.iterations,
+                    times: [0, 0.4, 0.6, 1],
+                    ease: 'linear'
+                }
+            });
         }, 300);
-    };
+    }, [pointerAnimation, breathAnimation, routine.iterations , routine.totalTimeSec]);
 
     // Countdown
     useEffect(() => {        
@@ -133,7 +153,7 @@ const StartScreen = () => {
                 setCounter(counter - 1);
             }, 1000);            
         }        
-    },[counter]);
+    },[counter, startRoutine]);
 
     return (
         <motion.main
@@ -158,14 +178,21 @@ const StartScreen = () => {
                     <PieChart
                         style={routine.pieChart}
                     >   
-                        <div className='pointer-container'>
+                        <motion.div                         
+                            className='pointer-container'
+                            animate={pointerAnimation}
+                            onAnimationComplete={() => pointerAnimation.set({ rotate: 0})}
+                        >
                             <div className='pointer'></div>
-                        </div>
-                        <BreathCircle
+                        </motion.div>
+                        <motion.div
+                            className='breath-circle'
+                            animate={breathAnimation}
                             style={routineGradients[routineIndex]}
+                            onAnimationComplete={() => setRoutineRunning(false)}
                         >
                             <span>Inhala</span>    
-                        </BreathCircle>
+                        </motion.div>
                     </PieChart>
                     <div className="btn-container">
                         <PrimaryBtn 
