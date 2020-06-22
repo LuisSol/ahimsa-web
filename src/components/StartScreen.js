@@ -100,7 +100,7 @@ const StartScreen = () => {
     useEffect(() => {
         setTimeout(() => {
             setQuoteVisible(false);
-        }, 4500);
+        }, 5000);
     }, []);
 
     const restartRoutine = () => {

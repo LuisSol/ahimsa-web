@@ -1,6 +1,6 @@
 /* GENERAL STYLES */
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 *, *:after, *:before {
@@ -40,12 +40,7 @@ code {
   background: #fff;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  outline: none;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  outline: none;  
 }
 
 /* COUNTDOWN MODAL CLASSES */
