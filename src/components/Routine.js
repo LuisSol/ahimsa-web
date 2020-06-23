@@ -19,27 +19,27 @@ const Routine = styled.div`
         }     
     }
     @media (max-height: 800px) {
-        height: 400px;
+        height: 380px;
     }
     @media (max-height: 600px) {
-        height: 350px;
+        height: 330px;
     }
     @media (max-height: 420px) {
-        height: 250px;
+        height: 230px;
         .routine-title {
-            font-size: 2rem;
+            font-size: 1.9rem;
         }
     } 
     @media (max-height: 375px) {
-        height: 220px;
+        height: 190px;
         .routine-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
     }
     @media (max-height: 350px) {
-        height: 190px;
+        height: 160px;
         .routine-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
     }
 `
@@ -55,24 +55,24 @@ const RoutineCircle = styled.div`
         width: 90%;
     }
     @media (max-width: 430px), (max-height: 800px) {
-        height: 350px;
-        width: 350px;
+        height: 330px;
+        width: 330px;
     }
     @media (max-width: 360px), (max-height: 600px) {
-        height: 300px;
-        width: 300px;
+        height: 280px;
+        width: 280px;
     }
     @media (max-height: 520px) {
-        height: 220px;
-        width: 220px;
+        height: 200px;
+        width: 200px;
     } 
     @media (max-height: 420px) {
-        height: 180px;
-        width: 180px;
+        height: 160px;
+        width: 160px;
     }
     @media (max-height: 350px) {
-        height: 150px;
-        width: 150px;
+        height: 130px;
+        width: 130px;
     }
 `
 

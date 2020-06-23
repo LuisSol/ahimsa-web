@@ -18,7 +18,7 @@ const StartContainer = styled.section`
     align-items: center;
     .main-title {
         font-family: 'Sacramento', cursive;
-        font-size: 3.5rem;
+        font-size: 2.8rem;
         font-weight: normal;
         margin: 0;
     }
@@ -37,38 +37,38 @@ const StartContainer = styled.section`
             height: 100px;
         }
         .main-title {
-            font-size: 3rem;
+            font-size: 2.6rem;
         }
     }
     @media (max-width: 350px) {        
         .main-title {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
         }
     }
     @media (max-height: 420px) {
         .main-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         .btn-container {
-            height: 65px;
+            height: 55px;
         }
     } 
     @media (max-height: 380px) {
         .main-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         .btn-container {
-            height: 65px;
+            height: 55px;
         }
     }    
 `
 const PrimaryBtn = styled.button`
     border: 0;
-    width: 10rem;
-    height: 3.5rem;
+    width: 7rem;
+    height: 3rem;
     border-radius: 10px;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;    
     &:focus {
         outline: none;
@@ -77,13 +77,13 @@ const PrimaryBtn = styled.button`
         opacity: .4;
     }
     @media (max-height: 800px) {
-        height: 2.5rem;
-        width: 7rem;
+        height: 2.3rem;
+        width: 6rem;
         font-size: 1rem;
     }
     @media (max-height: 380px), (max-height: 420px) {
-        height: 1.7rem;
-        width: 5rem;
+        height: 1.5rem;
+        width: 4.5rem;
         font-size: .6rem;
     }    
 `
@@ -93,8 +93,8 @@ const Counter = styled.span`
 `
 const PieChart =  styled.div`
     position: relative;
-    height: 400px;
-    width: 400px;
+    height: 380px;
+    width: 380px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -102,7 +102,7 @@ const PieChart =  styled.div`
     .pointer-container {
         position: absolute;
         width: 20px;
-        height: 450px;
+        height: 430px;
     }
     .pointer {
         height: 20px;
@@ -112,8 +112,8 @@ const PieChart =  styled.div`
         border-radius: 50%
     }
     .breath-circle {
-        height: 320px;
-        width: 320px;
+        height: 300px;
+        width: 300px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -121,51 +121,33 @@ const PieChart =  styled.div`
         color: white;
         span {
             font-family: 'Sacramento', cursive;
-            font-size: 3.5rem;
+            font-size: 3.4rem;
             position: absolute;
         }
     }    
     @media (max-height: 800px), (max-width: 420px) {
-        height: 350px;
-        width: 350px;
+        height: 330px;
+        width: 330px;
         .pointer-container {
-            height: 400px;
+            height: 380px;
         }
         .breath-circle {
-            height: 270px;
-            width: 270px;
+            height: 250px;
+            width: 250px;
             span {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
         }
     }
     @media (max-width: 380px) {
-        height: 300px;
-        width: 300px;
+        height: 280px;
+        width: 280px;
         .pointer-container {
-            height: 350px;
+            height: 330px;
         }
         .pointer {
             height: 17px;
             width: 17px;
-        }
-        .breath-circle {
-            height: 240px;
-            width: 240px;
-            span {
-                font-size: 2.7rem;
-            }
-        }
-    }
-    @media (max-width: 350px) {
-        height: 270px;
-        width: 270px;
-        .pointer-container {
-            height: 320px;
-        }
-        .pointer {
-            height: 15px;
-            width: 15px;
         }
         .breath-circle {
             height: 220px;
@@ -175,11 +157,29 @@ const PieChart =  styled.div`
             }
         }
     }
-    @media (max-height: 420px) {
-        height: 210px;
-        width: 210px;
+    @media (max-width: 350px) {
+        height: 250px;
+        width: 250px;
         .pointer-container {
-            height: 240px;
+            height: 300px;
+        }
+        .pointer {
+            height: 15px;
+            width: 15px;
+        }
+        .breath-circle {
+            height: 200px;
+            width: 200px;
+            span {
+                font-size: 2.3rem;
+            }
+        }
+    }
+    @media (max-height: 420px) {
+        height: 190px;
+        width: 190px;
+        .pointer-container {
+            height: 220px;
             width: 10px;
         }
         .pointer {
@@ -187,18 +187,18 @@ const PieChart =  styled.div`
             width: 10px;
         }
         .breath-circle {
-            height: 170px;
-            width: 170px;
+            height: 150px;
+            width: 150px;
             span {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
         }
     }
     @media (max-height: 380px) {
-        height: 180px;
-        width: 180px;
+        height: 160px;
+        width: 160px;
         .pointer-container {
-            height: 210px;
+            height: 190px;
             width: 10px;
         }
         .pointer {
@@ -206,18 +206,18 @@ const PieChart =  styled.div`
             width: 10px;
         }
         .breath-circle {
-            height: 140px;
-            width: 140px;
+            height: 120px;
+            width: 120px;
             span {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
         }
     }
     @media (max-height: 320px) {
-        height: 150px;
-        width: 150px;
+        height: 130px;
+        width: 130px;
         .pointer-container {
-            height: 180px;
+            height: 160px;
             width: 10px;
         }
         .pointer {
@@ -225,10 +225,10 @@ const PieChart =  styled.div`
             width: 10px;
         }
         .breath-circle {
-            height: 110px;
-            width: 110px;
+            height: 90px;
+            width: 90px;
             span {
-                font-size: 1.7rem;
+                font-size: 1.5rem;
             }
         }
     }

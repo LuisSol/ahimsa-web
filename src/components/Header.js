@@ -31,7 +31,7 @@ const Header = styled.header`
     align-self: flex-end;
   } 
   .apps {
-      display: flex;      
+      display: none;      
   } 
   .apps img {
       height: 30px;

@@ -25,7 +25,7 @@ const MainContainer = styled.section`
     }
     @media (max-height: 420px) {
         .main-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
     }    
 `
@@ -44,14 +44,14 @@ const PrimaryBtn = styled.button`
         opacity: .4;
     }
     @media (max-height: 650px) {
-        height: 2rem;
-        font-size: .9rem;
-        width: 7rem;
+        height: 1.9rem;
+        font-size: .8rem;
+        width: 6.5rem;
     }
     @media (max-height: 350px) {
-        height: 1.7rem;
-        font-size: .7rem;
-        width: 5rem;
+        height: 1.6rem;
+        font-size: .6rem;
+        width: 4.5rem;
     }  
 `
 

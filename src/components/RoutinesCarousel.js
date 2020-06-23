@@ -11,11 +11,8 @@ import * as actions from '../redux/routineActions'
 import Routine from './Routine';
 
 const RoutinesCarousel = styled.section`
-    height: 65%;
-    width: 100%;
-    @media (max-height: 650px) {
-        height: 75%;
-    }        
+    height: 75%;
+    width: 100%;            
 `
 
 export default () => {

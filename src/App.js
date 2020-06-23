@@ -11,7 +11,7 @@ import store from './redux/storeConfig';
 
 const MainContainer = styled.div`
   width: 1000px;
-  height: 100vh;
+  height: 87vh;
   margin: 0 auto;
   @media (max-width: 1000px) {
     width: 100%;
