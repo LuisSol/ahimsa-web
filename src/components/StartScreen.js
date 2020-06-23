@@ -31,7 +31,36 @@ const StartContainer = styled.section`
     }
     .disabled {
         opacity: .4;
+    }    
+    @media (max-height: 800px) {
+        .btn-container {
+            height: 100px;
+        }
+        .main-title {
+            font-size: 3rem;
+        }
     }
+    @media (max-width: 350px) {        
+        .main-title {
+            font-size: 2.5rem;
+        }
+    }
+    @media (max-height: 420px) {
+        .main-title {
+            font-size: 2rem;
+        }
+        .btn-container {
+            height: 65px;
+        }
+    } 
+    @media (max-height: 380px) {
+        .main-title {
+            font-size: 1.5rem;
+        }
+        .btn-container {
+            height: 65px;
+        }
+    }    
 `
 const PrimaryBtn = styled.button`
     border: 0;
@@ -47,6 +76,16 @@ const PrimaryBtn = styled.button`
     &:active {
         opacity: .4;
     }
+    @media (max-width: 800px) {
+        height: 2.5rem;
+        width: 7rem;
+        font-size: 1rem;
+    }
+    @media (max-height: 380px), (max-height: 420px) {
+        height: 1.7rem;
+        width: 5rem;
+        font-size: .6rem;
+    }    
 `
 const Counter = styled.span`
     font-family: 'Sacramento', cursive;
@@ -85,6 +124,113 @@ const PieChart =  styled.div`
             font-size: 3.5rem;
             position: absolute;
         }
+    }    
+    @media (max-height: 800px), (max-width: 420px) {
+        height: 350px;
+        width: 350px;
+        .pointer-container {
+            height: 400px;
+        }
+        .breath-circle {
+            height: 270px;
+            width: 270px;
+            span {
+                font-size: 3rem;
+            }
+        }
+    }
+    @media (max-width: 380px) {
+        height: 300px;
+        width: 300px;
+        .pointer-container {
+            height: 350px;
+        }
+        .pointer {
+            height: 17px;
+            width: 17px;
+        }
+        .breath-circle {
+            height: 240px;
+            width: 240px;
+            span {
+                font-size: 2.7rem;
+            }
+        }
+    }
+    @media (max-width: 350px) {
+        height: 270px;
+        width: 270px;
+        .pointer-container {
+            height: 320px;
+        }
+        .pointer {
+            height: 15px;
+            width: 15px;
+        }
+        .breath-circle {
+            height: 220px;
+            width: 220px;
+            span {
+                font-size: 2.5rem;
+            }
+        }
+    }
+    @media (max-height: 420px) {
+        height: 210px;
+        width: 210px;
+        .pointer-container {
+            height: 240px;
+            width: 10px;
+        }
+        .pointer {
+            height: 10px;
+            width: 10px;
+        }
+        .breath-circle {
+            height: 170px;
+            width: 170px;
+            span {
+                font-size: 2rem;
+            }
+        }
+    }
+    @media (max-height: 380px) {
+        height: 180px;
+        width: 180px;
+        .pointer-container {
+            height: 210px;
+            width: 10px;
+        }
+        .pointer {
+            height: 10px;
+            width: 10px;
+        }
+        .breath-circle {
+            height: 140px;
+            width: 140px;
+            span {
+                font-size: 2rem;
+            }
+        }
+    }
+    @media (max-height: 320px) {
+        height: 150px;
+        width: 150px;
+        .pointer-container {
+            height: 180px;
+            width: 10px;
+        }
+        .pointer {
+            height: 10px;
+            width: 10px;
+        }
+        .breath-circle {
+            height: 110px;
+            width: 110px;
+            span {
+                font-size: 1.7rem;
+            }
+        }
     }
 `
 
@@ -112,7 +258,7 @@ const StartScreen = () => {
                            + routine.exhaleTime;
         setTimeout(() => {
             setQuoteVisible(false);
-        }, 5000);
+        }, 200);
     }, [routine.inhaleTime, routine.holdTime, routine.exhaleTime]);
 
     const restartRoutine = () => {

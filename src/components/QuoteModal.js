@@ -9,7 +9,7 @@ const ModalContent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
 `
 const QuoteContainer = styled.div`
     max-width: 500px;
