@@ -13,6 +13,9 @@ import Routine from './Routine';
 const RoutinesCarousel = styled.section`
     height: 65%;
     width: 100%;
+    @media (max-height: 650px) {
+        height: 75%;
+    }        
 `
 
 export default () => {

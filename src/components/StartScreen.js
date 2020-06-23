@@ -113,7 +113,7 @@ const StartScreen = () => {
         setTimeout(() => {
             setQuoteVisible(false);
         }, 5000);
-    }, []);
+    }, [routine.inhaleTime, routine.holdTime, routine.exhaleTime]);
 
     const restartRoutine = () => {
         setCountdownVisible(true);

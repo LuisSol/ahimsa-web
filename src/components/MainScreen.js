@@ -17,16 +17,18 @@ const MainContainer = styled.section`
     align-items: center;
     .main-title {
         font-family: 'Sacramento', cursive;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         font-weight: normal;
         margin: 0;
-    }
-    p {
-        margin: 0;
-    }
+    }    
     .header {
         text-align: center;
     }
+    @media (max-height: 420px) {
+        .main-title {
+            font-size: 1.5rem;
+        }
+    }    
 `
 const PrimaryBtn = styled.button`
     border: 0;
@@ -42,6 +44,16 @@ const PrimaryBtn = styled.button`
     &:active {
         opacity: .4;
     }
+    @media (max-height: 650px) {
+        height: 2rem;
+        font-size: .9rem;
+        width: 7rem;
+    }
+    @media (max-height: 350px) {
+        height: 1.7rem;
+        font-size: .7rem;
+        width: 5rem;
+    }  
 `
 
 export default () => {
@@ -59,10 +71,9 @@ export default () => {
             style={{height: '100%'}}
         >
             <MainContainer>            
-                <div className="header">
-                    <h1 className="main-title">Ahimsa</h1>
-                    <p>Elige tu ritmo:</p>                
-                </div>            
+                
+                <h1 className="main-title">Elije tu ritmo:</h1>                                  
+                           
                 <RoutinesCarousel />
                 <div>        
                     <PrimaryBtn 

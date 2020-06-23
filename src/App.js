@@ -13,6 +13,9 @@ const MainContainer = styled.div`
   width: 1000px;
   height: 100vh;
   margin: 0 auto;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `
 const AppView = styled.section`
   height: 93%;
