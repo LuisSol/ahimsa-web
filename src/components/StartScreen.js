@@ -83,10 +83,14 @@ const PieChart =  styled.div`
         span {
             font-family: 'Sacramento', cursive;
             font-size: 3.5rem;
+            position: absolute;
         }
     }
 `
 
+/* total animation time */
+let totalRoutineTime;
+/* Countdown init value */
 const counterInit = 3;
 
 const StartScreen = () => {
@@ -98,9 +102,14 @@ const StartScreen = () => {
     const history = useHistory();
     const pointerAnimation = useAnimation();
     const breathAnimation = useAnimation();
+    const msg1Animation = useAnimation();
+    const msg2Animation = useAnimation();
+    const msg3Animation = useAnimation();
 
     // intro modal timer
-    useEffect(() => {
+    useEffect(() => {        
+        totalRoutineTime = routine.inhaleTime + routine.holdTime
+                           + routine.exhaleTime;
         setTimeout(() => {
             setQuoteVisible(false);
         }, 5000);
@@ -112,30 +121,62 @@ const StartScreen = () => {
         setTimeout(() => {
             setCounter(counter - 1);
         }, 1000);
-    }    
+    } 
+    
+    const startAnimations =  useCallback(() => {
+        pointerAnimation.start({
+            rotate: 360,
+            transition: {
+                duration: totalRoutineTime,
+                loop: routine.iterations,
+                ease: 'linear'
+            }
+        });
+        breathAnimation.start({
+            scale: [null, 1.1, 1.1, 1],
+            transition: {
+                duration: totalRoutineTime,
+                loop: routine.iterations,
+                times: [0, 0.4, 0.6, 1],
+                ease: 'linear'
+            }
+        });
+        msg1Animation.start({
+            opacity: [null, 1, 0, 0, 1],
+            transition: {
+                duration: totalRoutineTime,
+                loop: routine.iterations,
+                times: [0, 0.35, 0.4, 0.95, 1],
+                ease: 'linear'
+            }
+        });
+        msg2Animation.start({
+            opacity: [null, 0, 1, 1, 0],
+            transition: {
+                duration: totalRoutineTime,
+                loop: routine.iterations,
+                times: [0, 0.35, 0.4, 0.55, 0.6],
+                ease: 'linear'
+            }
+        });
+        msg3Animation.start({
+            opacity: [null, 0, 1, 1, 0],
+            transition: {
+                duration: totalRoutineTime,
+                loop: routine.iterations,
+                times: [0, 0.55, 0.6, 0.95, 1],
+                ease: 'linear'
+            }
+        });
+    },[pointerAnimation, breathAnimation, routine.iterations, 
+       msg1Animation, msg2Animation, msg3Animation ]);
 
     const startRoutine = useCallback(() => {        
         setTimeout(() => {
             setCounter(counterInit);
-            pointerAnimation.start({
-                rotate: 360,
-                transition: {
-                    duration: routine.totalTimeSec,
-                    loop: routine.iterations,
-                    ease: 'linear'
-                }
-            });
-            breathAnimation.start({
-                scale: [null, 1.1, 1.1, 1],
-                transition: {
-                    duration: routine.totalTimeSec,
-                    loop: routine.iterations,
-                    times: [0, 0.4, 0.6, 1],
-                    ease: 'linear'
-                }
-            });
+            startAnimations();
         }, 300);
-    }, [pointerAnimation, breathAnimation, routine.iterations , routine.totalTimeSec]);
+    }, [startAnimations]);   
 
     // Countdown
     useEffect(() => {        
@@ -157,7 +198,7 @@ const StartScreen = () => {
 
     return (
         <motion.main
-            initial="out" animate="in" exit="out" variants={pageTransition} 
+            initial="out" animate="in" exit="out" variants={pageTransition}            
             style={{height: '100%'}}
         >
             <QuoteModal quoteVisible={quoteVisible} />
@@ -191,7 +232,23 @@ const StartScreen = () => {
                             style={routineGradients[routineIndex]}
                             onAnimationComplete={() => setRoutineRunning(false)}
                         >
-                            <span>Inhala</span>    
+                            <motion.span
+                                animate={msg1Animation}
+                            >
+                                Inhala
+                            </motion.span> 
+                            <motion.span
+                                initial={{opacity: 0}}
+                                animate={msg2Animation}
+                            >
+                                Sostén
+                            </motion.span> 
+                            <motion.span
+                                initial={{opacity: 0}}
+                                animate={msg3Animation}
+                            >
+                                Exhala
+                            </motion.span>     
                         </motion.div>
                     </PieChart>
                     <div className="btn-container">
