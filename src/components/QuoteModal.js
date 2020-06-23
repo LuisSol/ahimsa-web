@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Modal from 'react-modal'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { changeQuote } from '../redux/routineActions'
 
 const ModalContent = styled.div`
     height: 100vh;
@@ -27,9 +29,15 @@ const InstructionsContainer = styled.div`
     margin-top: 2rem;
 `
 
+Modal.setAppElement('body');
 
 const QuoteModal = ({ quoteVisible }) => {
-    const {quote, author} = useSelector(state => state.quote)
+    const {quote, author} = useSelector(state => state.quote);
+    const dispatch = useDispatch();
+
+    useState(() => {        
+        dispatch(changeQuote());
+    }, []);
 
     return (
         <Modal

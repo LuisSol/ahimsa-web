@@ -76,7 +76,7 @@ const PrimaryBtn = styled.button`
     &:active {
         opacity: .4;
     }
-    @media (max-width: 800px) {
+    @media (max-height: 800px) {
         height: 2.5rem;
         width: 7rem;
         font-size: 1rem;
@@ -253,12 +253,12 @@ const StartScreen = () => {
     const msg3Animation = useAnimation();
 
     // intro modal timer
-    useEffect(() => {        
-        totalRoutineTime = routine.inhaleTime + routine.holdTime
-                           + routine.exhaleTime;
-        setTimeout(() => {
-            setQuoteVisible(false);
-        }, 200);
+    useEffect(() => {       
+            totalRoutineTime = routine.inhaleTime + routine.holdTime
+                            + routine.exhaleTime;
+            setTimeout(() => {
+                setQuoteVisible(false);
+            }, 5000);        
     }, [routine.inhaleTime, routine.holdTime, routine.exhaleTime]);
 
     const restartRoutine = () => {

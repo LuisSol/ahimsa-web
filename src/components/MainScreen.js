@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import RoutinesCarousel from './RoutinesCarousel';
 import { routineGradients, pageTransition } from '../common_styles';
-import { changeQuote } from '../redux/routineActions'
 
 const MainContainer = styled.section`    
     height: 100%;
@@ -58,12 +57,7 @@ const PrimaryBtn = styled.button`
 
 export default () => {
     const current = useSelector(state => state.routineIndex);
-    const history = useHistory();
-    const dispatch = useDispatch();
-
-    useState(() => {        
-        dispatch(changeQuote());
-    }, [])
+    const history = useHistory();    
 
     return (
         <motion.main

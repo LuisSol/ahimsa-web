@@ -1,4 +1,4 @@
-/* We are overwriting the css in case gradients arent supported */
+/* In case the css in case gradients arent supported (duplicate keys) */
 export const routineGradients = [
     {
         background: 'rgb(192,36,37)',

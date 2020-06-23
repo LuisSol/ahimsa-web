@@ -22,7 +22,7 @@ const AppView = styled.section`
 `
 
 function App() {
-  const location = useLocation();
+  const location = useLocation();  
 
   return (
     <Provider store={store}>
