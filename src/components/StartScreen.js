@@ -18,7 +18,7 @@ const StartContainer = styled.section`
     align-items: center;
     .main-title {
         font-family: 'Sacramento', cursive;
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         font-weight: normal;
         margin: 0;
     }
@@ -37,17 +37,17 @@ const StartContainer = styled.section`
             height: 100px;
         }
         .main-title {
-            font-size: 2.6rem;
+            font-size: 2.3rem;
         }
     }
     @media (max-width: 350px) {        
         .main-title {
-            font-size: 2.3rem;
+            font-size: 2rem;
         }
     }
     @media (max-height: 420px) {
         .main-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
         .btn-container {
             height: 55px;
@@ -55,20 +55,20 @@ const StartContainer = styled.section`
     } 
     @media (max-height: 380px) {
         .main-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
         .btn-container {
-            height: 55px;
+            height: 50px;
         }
     }    
 `
 const PrimaryBtn = styled.button`
     border: 0;
     width: 7rem;
-    height: 3rem;
+    height: 2.8rem;
     border-radius: 10px;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;    
     &:focus {
         outline: none;
@@ -77,13 +77,13 @@ const PrimaryBtn = styled.button`
         opacity: .4;
     }
     @media (max-height: 800px) {
-        height: 2.3rem;
-        width: 6rem;
-        font-size: 1rem;
+        height: 2.2rem;
+        width: 5.8rem;
+        font-size: .8rem;
     }
     @media (max-height: 380px), (max-height: 420px) {
-        height: 1.5rem;
-        width: 4.5rem;
+        height: 1.3rem;
+        width: 4.3rem;
         font-size: .6rem;
     }    
 `
@@ -93,8 +93,8 @@ const Counter = styled.span`
 `
 const PieChart =  styled.div`
     position: relative;
-    height: 380px;
-    width: 380px;
+    height: 360px;
+    width: 360px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -102,7 +102,7 @@ const PieChart =  styled.div`
     .pointer-container {
         position: absolute;
         width: 20px;
-        height: 430px;
+        height: 420px;
     }
     .pointer {
         height: 20px;
@@ -112,8 +112,8 @@ const PieChart =  styled.div`
         border-radius: 50%
     }
     .breath-circle {
-        height: 300px;
-        width: 300px;
+        height: 290px;
+        width: 290px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -126,14 +126,14 @@ const PieChart =  styled.div`
         }
     }    
     @media (max-height: 800px), (max-width: 420px) {
-        height: 330px;
-        width: 330px;
+        height: 320px;
+        width: 320px;
         .pointer-container {
-            height: 380px;
+            height: 370px;
         }
         .breath-circle {
-            height: 250px;
-            width: 250px;
+            height: 240px;
+            width: 240px;
             span {
                 font-size: 2.8rem;
             }
