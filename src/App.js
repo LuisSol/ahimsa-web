@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 
 import Header from './components/Header';
 import MainScreen from './components/MainScreen';
+import Privacy from './components/Privacy';
 import StartScreen from './components/StartScreen';
 import store from './redux/storeConfig';
 
@@ -33,6 +34,7 @@ function App() {
             <Switch location={location} key={location.pathname}>
               <Route exact path="/" component={MainScreen} />
               <Route path="/start" component={StartScreen} />
+              <Route path="/privacy" component={Privacy} />
             </Switch>
           </AnimatePresence>
         </AppView>       

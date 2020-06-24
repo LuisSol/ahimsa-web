@@ -15,7 +15,6 @@ const MainContainer = styled.section`
     justify-content: space-around;
     align-items: center;
     .main-title {
-        font-family: 'Sacramento', cursive;
         font-size: 2.5rem;
         font-weight: normal;
         margin: 0;
